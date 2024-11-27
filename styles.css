@@ -1,0 +1,95 @@
+/* General Reset and Styling */
+body {
+    margin: 0px;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #000000;
+    height: 100vh;
+    overflow: hidden; /* Prevent regular scrolling */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  header {
+    text-align: center;
+    padding: 8px;
+    background: hsl(0, 0%, 0%);
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 10px;
+    color: #000000;
+  }
+  
+  main {
+    flex: 1;
+    overflow-y: scroll; /* Enable vertical scrolling */
+    scroll-snap-type: y mandatory; /* Enable vertical snapping */
+    scroll-behavior: auto; /* Smooth snapping */
+  }
+  
+  .video-card {
+    width: 100%;
+    height: 100%; /* Each video occupies full viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: center; /* Snap to the center of the viewport */
+    position: relative;
+  }
+  
+  video {
+    width: auto; /* Maintain natural width */
+    height: 90vh; /* Adjust video height to maintain 9:16 ratio */
+    max-width: 56.25vh; /* Maintain 9:16 aspect ratio */
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .video-card .info {
+    position: absolute;
+    bottom:5%; /* Adjusted to stay below the video */
+    left: 5%;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+    background: rgb(0, 0, 0); /* Add background to make text more readable */
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .video-card .info h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .video-card .info p {
+    margin: 5px 0 0;
+    font-size: 14px;
+  }
+  
+  .controls {
+    position: absolute;
+    bottom: 5%; /* Aligned with the info box */
+    right: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .controls button {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .controls button:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  
